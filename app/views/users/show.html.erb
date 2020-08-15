@@ -19,7 +19,7 @@
 				<a href ="">設定ボタン</a>
 			</div>
 			<h2>New book</h2>
-			<%= form_for(@book, url: books_path ) do |f| %>
+			<%= form_for(@book, url: books_path) do |f| %>
 				<lavel class ="title">Title</lavel>
 				<%= f.text_field :title, class: "title-box" %>
 				<lavel class ="body">Opinion</lavel>
@@ -29,6 +29,29 @@
 				</div>
 			<% end %>
 		</div>
-		<div class ="col"></div>
+		<div class ="col">
+			<h2>Books</h2>
+			<table class ="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Opinion</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
+
+
+

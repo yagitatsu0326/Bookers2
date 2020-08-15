@@ -7,23 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <div class ="header">
-      <ul class ="header-nav">
-        <%if user_signed_in? %>
-          <li class =""><%= link_to "Home","#" %></li>
-          <li class =""><%= link_to "Users", "#"%></li>
-          <li class =""><%= link_to "Books", books_path %></li>
-          <li class =""><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li class =""><%= link_to "Home", "#" %></li>
-          <li class =""><%= link_to "About","#" %></li>
-          <li class =""><%= link_to "Sign up", new_user_registration_path %></li>
-          <li class =""><%= link_to "login", new_user_session_path %></li>
-        <% end %>
-      </ul>
+    <div class ="header clearfix">
+      <div class ="container">
+        <div class ="header-nav-left">
+          <p class ="header-logo">Bookers</p>
+        </div>
+        <ul class ="header-nav-right">
+          <%if user_signed_in? %>
+            <li class ="header-list"><%= link_to "Home", users_path %></li>
+            <li class ="header-list"><%= link_to "Users", users_path %></li>
+            <li class ="header-list"><%= link_to "Books", books_path %></li>
+            <li class ="header-list"><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class ="header-list"><%= link_to "Home", users_path %></li>
+            <li class ="header-list"><%= link_to "About","#" %></li>
+            <li class ="header-list"><%= link_to "Sign up", new_user_registration_path %></li>
+            <li class ="header-list"><%= link_to "login", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <%= yield %>
   </body>
