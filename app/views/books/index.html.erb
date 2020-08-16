@@ -1,1 +1,21 @@
-<h1>test1</h1>
+<div class ="container">
+	<h2>Books</h2>
+	<table class ="table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Opinion</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @books.each do |book| %>
+				<tr>
+					<td><%= attachment_image_tag @user , :profile_image, :fill, 60,60, format: 'joeg', class: "user-image" %></td>
+					<td><%= book.title %></td>
+					<td><%= book.body%></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,12 @@
+<div class ="container">
+	<h2>User info</h2>
+	<%= form_for(@user , url: user_path) do |f| %>
+		<lavel class ="name">Nmae</lavel>
+			<%= f.text_field :name, class: "name-box" %>
+		<lavel class ="iamge">Image</lavel>
+			<%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+		<lavel class ="introduction">Introduction</lavel>
+		<%= f.text_area :introduction, class: "introduction-box" %>
+		<%= f.submit 'Update User'%>
+	<% end %>
+</div>

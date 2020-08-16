@@ -2,21 +2,21 @@
 	<div class ="row">
 		<div class ="col">
 			<h2>User info</h2>
-			<img class ="",src ="img">
+			<%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %>
 			<table class ="table">
 				<tbody>
 					<tr>
 						<td>name</td>
-						<td></td>
+						<td> <%= @user.name %></td>
 					</tr>
 					<tr>
 						<td>introduction</td>
-						<td></td>
+						<td><%= @user.introduction %></td>
 					</tr>
 				</tbody>
 			</table>
 			<div class ="row">
-				<a href ="">設定ボタン</a>
+					<p><%= link_to "プロフィール設定", edit_user_path %></p>
 			</div>
 			<h2>New book</h2>
 			<%= form_for(@book, url: books_path) do |f| %>
@@ -40,18 +40,17 @@
 					</tr>
 				</thead>
 				<tbody>
-					
+					<% @books.each do |book| %>
 						<tr>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
+							<td><%= book.title %></td>
+							<td><%= book.title %></td>
+							<td><%= book.body %></td>
 						</tr>
-					
+					<% end %>
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
-
 
 
