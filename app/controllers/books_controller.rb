@@ -15,7 +15,6 @@ class BooksController < ApplicationController
 	end
 	def index
 		@books = Book.all
-		@users = User.all
 	end
 
 	private

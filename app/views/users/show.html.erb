@@ -1,6 +1,7 @@
 <div class ="container">
 	<div class ="row">
 		<div class ="col">
+			<%= flash[:notice] %>
 			<h2>User info</h2>
 			<%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %>
 			<table class ="table">
@@ -16,14 +17,14 @@
 				</tbody>
 			</table>
 			<div class ="row">
-					<p><%= link_to "プロフィール設定", edit_user_path %></p>
+					<p><%= link_to "プロフィール設定", edit_user_path(current_user.id) %></p>
 			</div>
 			<h2>New book</h2>
 			<%= form_for(@book, url: books_path) do |f| %>
 				<lavel class ="title">Title</lavel>
-				<%= f.text_field :title, class: "title-box" %>
+					<%= f.text_field :title, class: "title-box" %>
 				<lavel class ="body">Opinion</lavel>
-				<%= f.text_area :body, class: "body-box" %>
+					<%= f.text_area :body, class: "body-box" %>
 				<div class ="row">
 					<%= f.submit 'Create Book'%>
 				</div>
@@ -39,15 +40,7 @@
 						<th>Opinion</th>
 					</tr>
 				</thead>
-				<tbody>
-					<% @books.each do |book| %>
-						<tr>
-							<td><%= book.title %></td>
-							<td><%= book.title %></td>
-							<td><%= book.body %></td>
-						</tr>
-					<% end %>
-				</tbody>
+
 			</table>
 		</div>
 	</div>

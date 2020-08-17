@@ -1,6 +1,15 @@
 <div class ="container">
 	<h2>User info</h2>
 	<%= form_for(@user , url: user_path) do |f| %>
+		<% if @user.errors.any? %>
+		  <div class="alert alert-warning">
+		    <ul>
+		      <% @user.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		    </ul>
+		  </div>
+		<% end %>
 		<lavel class ="name">Nmae</lavel>
 			<%= f.text_field :name, class: "name-box" %>
 		<lavel class ="iamge">Image</lavel>

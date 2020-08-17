@@ -23,7 +23,7 @@
             <li class ="header-list"><%= link_to "Books", books_path %></li>
             <li class ="header-list"><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li class ="header-list"><%= link_to "Home", user_path(current_user.id) %></li>
+            <li class ="header-list"><%= link_to "Home", "/" %></li>
             <li class ="header-list"><%= link_to "About","#" %></li>
             <li class ="header-list"><%= link_to "Sign up", new_user_registration_path %></li>
             <li class ="header-list"><%= link_to "login", new_user_session_path %></li>
