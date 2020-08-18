@@ -9,12 +9,14 @@ class BooksController < ApplicationController
 		redirect_to books_path
 	end
 	def show
-		@book = Book.find(book_params[:id])
+		@book = Book.find(params[:id])
+		@user = User.find(params[:id])
 	end
 	def edit
 	end
 	def index
 		@books = Book.all
+
 	end
 
 	private

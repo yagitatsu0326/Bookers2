@@ -1,21 +1,24 @@
 <div class ="container">
-	<h2>Books</h2>
-	<table class ="table">
-		<thead>
-			<tr>
-				<th>Title</th>
-				<th>Opinion</th>
-				<th></th>
-			</tr>
-		</thead>
-		<% @books.each do |book| %>
-			<tbody>
-				<tr>
-					
-					<td><%= book.title %></td>
-					<td><%= book.body%></td>
-				</tr>
-			</tbody>
-		<% end %>
-	</table>
+	<div class ="row">
+		<div class ="col">
+			<h2>Books</h2>
+			<table class ="table">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Opinion</th>
+						<th></th>
+					</tr>
+				</thead>
+				<% @books.each do |book| %>
+					<tbody>
+						<tr>
+							<td><%= book.title %></td>
+							<td><%= book.body %></td>
+						</tr>
+					</tbody>
+				<% end %>
+			</table>
+	</div>
 </div>
+

@@ -1,8 +1,18 @@
 <div class ="container">
 	<div class ="row">
 		<div class ="col">
-			<%= flash[:notice] %>
+			<%= flash[:create] %>
+			<%= flash[:update] %>
 			<h2>User info</h2>
+			<% if @book.errors.any? %>
+			  <div class="alert alert-warning">
+			    <ul>
+			      <% @book.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			    </ul>
+			  </div>
+			<% end %>
 			<%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %>
 			<table class ="table">
 				<tbody>
@@ -40,6 +50,16 @@
 						<th>Opinion</th>
 					</tr>
 				</thead>
+				<tbody>
+					<% @books.each do |book| %>
+						<tr>
+							<td><%= book.title %></td>
+							<td><%= book.body %></td>
+						</tr>
+					<% end %>
+				</tbody>
+				<% end %>
+
 
 			</table>
 		</div>
