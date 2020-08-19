@@ -4,14 +4,16 @@
 			<%= flash[:create] %>
 			<%= flash[:update] %>
 			<h2>User info</h2>
-			<% if @book.errors.any? %>
-			  <div class="alert alert-warning">
-			    <ul>
-			      <% @book.errors.full_messages.each do |message| %>
-			        <li><%= message %></li>
-			      <% end %>
-			    </ul>
-			  </div>
+			<%= form_for(@book , url: book_path ) do |f| %>
+				<% if @book.errors.any? %>
+				  <div class="alert alert-warning">
+				    <ul>
+				      <% @book.errors.full_messages.each do |message| %>
+				        <li><%= message %></li>
+				      <% end %>
+				    </ul>
+				  </div>
+				<% end %>
 			<% end %>
 			<%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %>
 			<table class ="table">
@@ -30,7 +32,7 @@
 					<p><%= link_to "プロフィール設定", edit_user_path(current_user.id) %></p>
 			</div>
 			<h2>New book</h2>
-			<%= form_for(@book, url: book_path) do |f| %>
+			<%= form_for(@book) do |f| %>
 				<lavel class ="title">Title</lavel>
 					<%= f.text_field :title, class: "title-box" %>
 				<lavel class ="body">Opinion</lavel>
@@ -45,7 +47,7 @@
 			<table class ="table">
 				<thead>
 					<tr>
-						<th></th>
+						<th>img画像</th>
 						<th>Title</th>
 						<th>Opinion</th>
 					</tr>
@@ -53,7 +55,8 @@
 				<tbody>
 				<% @books.each do |book| %>
 					<tr>
-						<td><%= book.title %></td>
+						<td><%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %></td>
+						<td><%= book.title %></a></td>
 						<td><%= book.body %></td>
 					</tr>
 				<% end %>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
   	@user = User.new
-  	@book = Book.new
+  	 @book = Book.new
   end
   def create
   	@book = Book.new(book_params)
@@ -13,9 +13,10 @@ class UsersController < ApplicationController
   	end
   end
   def show
-  	@user = User.find(params[:id])
-  	@book = Book.new
-  	@books = @user.books.all
+    @book = Book.find(params[:id])
+  	@user = User.find(params[:id]) #画像呼び出し
+    @book = Book.new
+  	@books = @user.books
   end
   def index
   	@users = User.all
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
   		render :edit
   	end
   end
+
 
   private
   def user_params

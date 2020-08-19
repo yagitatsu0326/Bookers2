@@ -1,0 +1,27 @@
+<h2>Book detail</h2>
+<table class ="table">
+	<tbody>
+		<tr>
+			<td>
+				<%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %>
+				<%= @user.name %>
+			</td>
+			<% @book.each do |book| %>
+				<td><%= book.title %></td>
+				<td><%= book.body %></td>
+			<% end %>
+			<td><%= link_to "Edit", edit_book_path(current_user.id) %></td>
+			<td><%= link_to "Destroy", book_path, method: :delete %></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
