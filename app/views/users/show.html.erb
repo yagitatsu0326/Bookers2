@@ -1,48 +1,7 @@
 <div class ="container">
 	<div class ="row">
-		<div class ="col">
-			<%= flash[:create] %>
-			<%= flash[:update] %>
-			<h2>User info</h2>
-			<%= form_for(@book , url: book_path ) do |f| %>
-				<% if @book.errors.any? %>
-				  <div class="alert alert-warning">
-				    <ul>
-				      <% @book.errors.full_messages.each do |message| %>
-				        <li><%= message %></li>
-				      <% end %>
-				    </ul>
-				  </div>
-				<% end %>
-			<% end %>
-			<%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %>
-			<table class ="table">
-				<tbody>
-					<tr>
-						<td>name</td>
-						<td> <%= @user.name %></td>
-					</tr>
-					<tr>
-						<td>introduction</td>
-						<td><%= @user.introduction %></td>
-					</tr>
-				</tbody>
-			</table>
-			<div class ="row">
-					<p><%= link_to "プロフィール設定", edit_user_path(current_user.id) %></p>
-			</div>
-			<h2>New book</h2>
-			<%= form_for(@book) do |f| %>
-				<lavel class ="title">Title</lavel>
-					<%= f.text_field :title, class: "title-box" %>
-				<lavel class ="body">Opinion</lavel>
-					<%= f.text_area :body, class: "body-box" %>
-				<div class ="row">
-					<%= f.submit 'Create Book'%>
-				</div>
-			<% end %>
-		</div>
-		<div class ="col">
+		<%= render 'users/list', book: @book, user: @user %>
+		<div class ="col-xs-9">
 			<h2>Books</h2>
 			<table class ="table">
 				<thead>
@@ -55,8 +14,8 @@
 				<tbody>
 				<% @books.each do |book| %>
 					<tr>
-						<td><%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %></td>
-						<td><%= book.title %></a></td>
+						<td><%= attachment_image_tag @user, :profile_image, size: "50x50", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %></td>
+						<td><a href ="/books/<%=book.id%>"><%= book.title %></a></td>
 						<td><%= book.body %></td>
 					</tr>
 				<% end %>

@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
 *{
 	padding :0;
 	margin: 0;
@@ -39,6 +42,7 @@
 	font-size :20px;
 	padding-top: 10px;
 	color: white;
+
 }
 .header-nav-right {
 	float:right;
@@ -50,7 +54,18 @@
 	padding-right: 10px;
 }
 
-
+.h2 {
+	font-size: 30px;
+	margin-top: 20px;
+    margin-bottom: 10px;
+}
+.edit-btn {
+	background-color: #fff;
+	border-color: #ccc;
+}
+.col-xs-12 {
+	width: 100%;
+}
 
 
 

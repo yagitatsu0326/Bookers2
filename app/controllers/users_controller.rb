@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+
   def new
   	@user = User.new
-  	 @book = Book.new
+  	@book = Book.new
   end
   def create
   	@book = Book.new(book_params)
@@ -13,13 +14,14 @@ class UsersController < ApplicationController
   	end
   end
   def show
-    @book = Book.find(params[:id])
-  	@user = User.find(params[:id]) #画像呼び出し
+  	@user = User.find(params[:id])
     @book = Book.new
   	@books = @user.books
   end
   def index
   	@users = User.all
+    @book = Book.new
+    @user = current_user
   end
   def edit
   	@user = User.find(params[:id])
@@ -42,4 +44,5 @@ class UsersController < ApplicationController
   def book_params
 	params.require(:book).permit(:title, :body)
   end
+
 end

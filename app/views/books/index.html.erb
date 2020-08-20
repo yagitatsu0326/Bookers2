@@ -1,24 +1,27 @@
 <div class ="container">
 	<div class ="row">
-		<div class ="col">
+		<%= render 'users/list', book: @book, user: @user %>
+		<div class ="col-xs-9">
 			<h2>Books</h2>
 			<table class ="table">
 				<thead>
 					<tr>
+						<th></th>
 						<th>Title</th>
 						<th>Opinion</th>
-						<th></th>
 					</tr>
 				</thead>
 				<% @books.each do |book| %>
-					<tbody>
-						<tr>
-							<td><%= book.title %></td>
-							<td><%= book.body %></td>
-						</tr>
-					</tbody>
+				<tbody>
+					<tr>
+						<th><%= attachment_image_tag @user, :profile_image, size: "50x50", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %></th>
+						<th><a href = "/books/<%=book.id%>"><%= book.title %></a></th>
+						<th><%= book.body %></th>
+					</tr>
+				</tbody>
 				<% end %>
 			</table>
+		</div>
 	</div>
 </div>
 
