@@ -19,20 +19,57 @@
         <nav>
           <ul class ="header-nav-right">
             <%if user_signed_in? %>
-              <li><%= link_to "Home", user_path(current_user.id), class: "header-list-icon" %></li>
-              <li><%= link_to "Users", users_path, class: "header-list"  %></li>
-              <li><%= link_to "Books", books_path, class: "header-list"  %></li>
-              <li><%= link_to "logout", destroy_user_session_path, method: :delete, class: "header-list"  %></li>
+              <li>
+                <%= link_to user_path(current_user.id), class: "header-list" do %>
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
+                <% end %>
+              </li>
+              <li>
+                <%= link_to users_path, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Users
+                <% end %>
+              </li>
+              <li>
+                <%= link_to books_path, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Books
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>logout
+                <% end %>
+              </li>
             <% else %>
-              <li><%= link_to "Home", "/", class: "header-list"  %></li>
-              <li><%= link_to "About","#", class: "header-list"  %></li>
-              <li><%= link_to "Sign up", new_user_registration_path, class: "header-list"  %></li>
-              <li><%= link_to "login", new_user_session_path, class: "header-list"  %></li>
+              <li>
+                <%= link_to root_path, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
+                <% end %>
+              </li>
+              <li>
+                <%= link_to homes_about_path, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-link" aria-hidden="true"></span>About
+                <% end %>
+                </li>
+              <li>
+                <%= link_to new_user_registration_path, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Sign up
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_session_path, class: "header-list" do %>
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>login
+                <% end %>
+              </li>
             <% end %>
           </ul>
         </nav>
       </div>
     </div>
     <%= yield %>
+    <footer>
+      <div class ="container">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
    if current_user.id
-   	 user_path(resource.id)
+   	  user_path(resource.id)
    else # ログイン後に遷移するpathを設定
-     root_path
+      root_path
    end
   end
 
