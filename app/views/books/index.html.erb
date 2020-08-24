@@ -1,5 +1,6 @@
+
 <div class ="container">
-	<%= render 'layouts/error_messages' %>
+	<%= render 'layouts/error_messages'%>
 	<div class ="row">
 		<%= render 'users/list', book: @book, user: @user %>
 		<div class ="col-xs-9">
@@ -12,15 +13,17 @@
 						<th>Opinion</th>
 					</tr>
 				</thead>
-				<% @books.each do |book| %>
 				<tbody>
+					<% @books.each do |book| %>
 					<tr>
-						<th><%= attachment_image_tag @user, :profile_image, size: "50x50", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %></th>
+						<th>
+							<a href = "/users/<%=book.user.id%>"><%= attachment_image_tag book.user, :profile_image, size: "40x40", format: 'jgg', fallback: "no_img.jpg", class: "user-image" %></a>
+						</th>
 						<th><a href = "/books/<%=book.id%>"><%= book.title %></a></th>
 						<th><%= book.body %></th>
 					</tr>
+					<% end %>
 				</tbody>
-				<% end %>
 			</table>
 		</div>
 	</div>

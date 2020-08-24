@@ -35,6 +35,9 @@ body {
 	padding-right: 15px;
 	padding-left: 15px;
 }
+.alert-warning {
+	color: red;
+}
 .header {
 	background-color: black;
 	margin-bottom: 20px;
@@ -55,6 +58,9 @@ li {
 	text-align: center;
 	display: inline;
 }
+.glyphicon {
+	padding-right: 10px;
+}
 .header-list {
 	color: #9d9d9d;
 	padding-top: 15px;
@@ -63,8 +69,16 @@ li {
 	padding-left: 15px;
 	display: inline-block;
 }
+.header-list:hover {
+	color: #fff;
+    background-color: transparent;
+}
 p {
 	text-align: right;
+}
+.home-p {
+	text-align: left;
+
 }
 
 
@@ -85,6 +99,13 @@ h2 {
 th {
 	font-weight: bold;
 }
+a, td{
+	font-weight: bold;
+	color: #666;
+}
+a:hover {
+	color: #333;
+}
 lavel {
 	display: inline-block;
     max-width: 100%;
@@ -97,6 +118,30 @@ lavel {
 
 
 
+.login-btn {
+	color: #666;
+	background-color: #5bc0de;
+    border-color: #46b8da;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+.login-btn:hover {
+	color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.signup-btn {
+	color: #666;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+.signup-btn:hover {
+	color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
 .Update-btn {
 	color: #fff;
 	background-color: #337ab7;
@@ -118,6 +163,39 @@ lavel {
 	color: #fff;
     background-color: #286090;
     border-color: #204d74;
+}
+.edit_btn {
+	color: #fff;
+    background-color: #00cc21;
+    border-color: #4cae4c;
+    border-radius: 3px ;
+	padding: 5px 10px;
+ }
+
+.edit_btn:hover {
+	color: #fff;
+	background-color: #00e921;
+}
+.dleate_btn {
+	color: #fff;
+    background-color: #bf0000;
+    border-color: #d43f3a;
+	border-radius: 3px;
+	padding: 5px 10px;
+}
+.dleate_btn:hover {
+	color: #fff;
+	background-color: #f70b00;
+}
+.show-btn {
+	color: #fff;
+    background-color: #005eb8;
+    border-radius: 3px ;
+	padding: 5px 10px;
+}
+.show-btn:hover {
+	color: #fff;
+    background-color: #0063ff;
 }
 
 

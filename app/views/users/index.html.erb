@@ -16,7 +16,7 @@
 						<tr>
 							<td><%= attachment_image_tag user, :profile_image, format: 'jpg',fallback: "no_img.jpg", size: "40x40" %></td>
 							<td><%= user.name %></td>
-							<td><a href ="/users/<%= user.id%>">Show</a></td>
+							<td><a class ="show-btn" href ="/users/<%= user.id%>">Show</a></td>
 						</tr>
 					<% end %>
 				</tbody>
