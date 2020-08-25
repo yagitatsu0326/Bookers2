@@ -5,11 +5,11 @@
 			<%= render 'layouts/error_messages'%>
 			<%= form_for(@book) do |f| %>
 				<div class ="field row">
-					<lavel class ="title">Title</lavel><br>
+					<label class ="title">Title</label><br>
 					<%= f.text_field :title, class: "col-xs-12 title-box" %><br>
 				</div>
 				<div class ="field row">
-					<lavel class ="body">Opinion</lavel><br>
+					<label class ="body">Opinion</label><br>
 					<%= f.text_area :body, class: "col-xs-12 body-box" %><br>
 				</div>
 				<div class ="action row">
