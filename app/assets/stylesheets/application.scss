@@ -15,6 +15,7 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 *{
 	padding :0;
@@ -115,8 +116,10 @@ label {
 .field, .action {
 	margin-bottom: 10px;
 }
-
-
+.textarea {
+	width: 600px;
+	height: 100px;
+}
 
 .login-btn {
 	color: #666;
