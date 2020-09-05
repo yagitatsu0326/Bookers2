@@ -51,7 +51,7 @@
 						</th>
 						<th><%= bookcomment.comment %></th>
 						<th>
-							<% if @book.user == current_user %>
+							<% if bookcomment.user == current_user %>
 								<%= link_to "Destroy", book_bookcomment_path(bookcomment.book, bookcomment), method: :delete, class: "dleate_btn" %>
 							<% end %>
 						</th>
