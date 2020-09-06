@@ -57,6 +57,6 @@ class BooksController < ApplicationController
       if current_user != @book.user
          redirect_to books_path
       end
-  end
+  	end
 
 end
