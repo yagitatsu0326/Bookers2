@@ -56,7 +56,7 @@
 						<th><%= bookcomment.comment %></th>
 						<th>
 							<% if bookcomment.user == current_user %>
-								<%= link_to "Destroy", book_bookcomment_path(bookcomment.book, bookcomment), method: :delete, class: "dleate_btn" %>
+								<%= link_to "Destroy", book_bookcomment_path(bookcomment.book, bookcomment), method: :delete, class: "btn dleate_btn" %>
 							<% end %>
 						</th>
 					</tr>

@@ -1,6 +1,6 @@
 <div class ="container">
 	<div class ="row">
-		<%= render 'users/list', book: @book, user: @user %>
+		<%= render 'users/list', book: @book, user: @user_info %>
 		<div class ="col-xs-9">
 			<h2>Users</h2>
 			<table class ="table">
@@ -18,8 +18,8 @@
 							<td><%= user.name %></td>
 							<td>フォロー数  <%= user.followings.count %></td>
 							<td>フォロワー数  <%= user.followers.count %></td>
-							<td><%= render 'layouts/relationship', user: @user %></td>
-							<td><a class ="show-btn" href ="/users/<%= user.id%>">Show</a></td>
+							<td><%= render 'layouts/relationship', user: user %></td>
+							<td><a class ="btn show-btn" href ="/users/<%= user.id%>">Show</a></td>
 						</tr>
 					<% end %>
 				</tbody>
