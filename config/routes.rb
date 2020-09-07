@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'searchs/search' => "searchs#search"
   get 'relationships/:id/follow' => "relationships#follow"
   get 'relationships/:id/follower' => "relationships#follower"
 
