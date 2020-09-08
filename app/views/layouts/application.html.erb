@@ -66,11 +66,14 @@
       </div>
     </div>
     <div class ="container">
-      <%= form_tag(searchs_search_path, :method => 'get') do %>
-          <%= select_tag(:option, options_for_select([["user", "1"],["book","2"]]))%> 
-          <%= text_field_tag :search %>
-          <%= submit_tag 'Search' %>
-      <% end %>
+      <div class ="search_box">
+        <%= form_tag(searchs_search_path, :method => 'get') do %>
+            <%= text_field_tag :search %>
+            <%= select_tag(:model, options_for_select([["USER", "1"],["BOOK","2"]]))%>
+            <%= select_tag(:choice, options_for_select([["完全一致", "1"],["前方一致","2"],["後方一致","3"],["部分一致","4"]]))%>
+            <%= submit_tag 'Search' %>
+        <% end %>
+      </div>
     </div>
     <%= yield %>
     <footer>
