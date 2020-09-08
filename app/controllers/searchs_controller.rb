@@ -1,4 +1,7 @@
 class SearchsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def search
   	@user_or_book = params[:model]
   	@how_search = params[:choice]
