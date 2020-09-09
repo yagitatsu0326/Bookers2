@@ -78,8 +78,7 @@ gem 'font-awesome-rails'
 
 gem 'ransack'
 
-
-
+gem "jquery-rails"
 
 
 

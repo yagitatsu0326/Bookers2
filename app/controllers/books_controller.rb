@@ -42,7 +42,6 @@ class BooksController < ApplicationController
 		redirect_to books_path
 	end
 	def index
-
 		@books = Book.all
 		@book = Book.new
 		@user = current_user
